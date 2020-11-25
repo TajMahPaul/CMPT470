@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+< html lang="en">
+  < head>
+    <% include ../partials/head %>
+  </ head>
+  < body class="container">
+    < header>
+      <% include ../partials/header %>
+    </ header>
+    < main>
+    <table>
+        <tr>
+           <th>Dimension</th><th>Quantity</th><th>Factory: rx</th>
+        </tr>
+     
+        <% for (var i = 0; i < rectangles.length; i++) { %>
+         <tr>
+            <td><%= rectangles[i].dimension %></td>
+            <td><%= rectangles[i].quantity %></td>
+            <td><%= rectangles[i].factory %></td>
+            <td><a class="btn btn-raised btn-danger" href="/admin/dashboard/detele/<%= rectangles.id %>">Delete</a></td>
+         </tr>    
+        <% } %>
+     </table>
+     
+    </ main>
+    < footer>
+      <% include ../partials/footer %>
+    </ footer>
+  </ body>
+</ html>
