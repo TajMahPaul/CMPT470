@@ -5,7 +5,7 @@ const path = require('path')
 const session = require('express-session')
 
 const app = express()
-const port = 3000
+const port = 80
 
 const routes = {
 	rectangles: require('./controllers/rectangle'),
