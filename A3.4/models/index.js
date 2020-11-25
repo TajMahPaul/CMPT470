@@ -1,7 +1,8 @@
 const { Sequelize } = require('sequelize');
+const {host, name, user, password} = require('../db.config');
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-	host: 'localhost',
+const sequelize = new Sequelize(name, user, password, {
+	host: host,
 	dialect: 'mysql', 
 	logQueryParameters: true,
 	benchmark: true
@@ -12,8 +13,9 @@ const models = [
 	// could add more here
 ];
 
-for (const modelDefiner of modelDefiners) {
-	modelDefiner(sequelize);
+for (const model of models) {
+	model(sequelize);
 }
 
+sequelize.sync();
 module.exports = sequelize;

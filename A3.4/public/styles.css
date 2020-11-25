@@ -1,0 +1,35 @@
+.navbar-text {
+    position: absolute;
+    left: 60px
+}
+
+.navbar {
+    margin-bottom: 35px;
+}
+
+.container {
+    max-width: 1200px !important;
+}
+
+.row {
+    margin-top: 35px;
+}
+.rectangle {
+    margin: 10px;
+}
+
+.table-card {
+    max-height: 387px !important;
+}
+
+.table-condensed{
+    font-size: 10px;
+}
+
+table th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+}
