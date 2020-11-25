@@ -4,16 +4,16 @@ version: "3"
 services:
   # if you would like to use a custom sql snaphot, create a directory called `sql` in the root directory and put your snapshot there. Then use this db service
 
-  db:
-    image: mysql:5.7
-    environment:
-      - MYSQL_DATABASE=app
-      - MYSQL_ROOT_PASSWORD=secret
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
-      - --sql-mode=NO_ENGINE_SUBSTITUTION
-    volumes:
-      - ./.data/mysql:/var/lib/mysql
-    ports:
-      - "3306:3306"
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     - MYSQL_DATABASE=app
+  #     - MYSQL_ROOT_PASSWORD=secret
+  #   command:
+  #     - --character-set-server=utf8mb4
+  #     - --collation-server=utf8mb4_unicode_ci
+  #     - --sql-mode=NO_ENGINE_SUBSTITUTION
+  #   volumes:
+  #     - ./.data/mysql:/var/lib/mysql
+  #   ports:
+  #     - "3306:3306"
