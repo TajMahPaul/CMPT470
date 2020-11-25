@@ -1,24 +1,19 @@
 const { Sequelize } = require('sequelize');
-const { applyExtraSetup } = require('./extra-setup');
 
-// In a real app, you should keep the database connection URL as an environment variable.
-// But for this example, we will just use a local SQLite database.
-// const sequelize = new Sequelize(process.env.DB_CONNECTION_URL);
-
-const sequelize = new Sequelize({
-	dialect: 'sqlite',
-	storage: 'sqlite-example-database/example-db.sqlite',
+const sequelize = new Sequelize('database', 'username', 'password', {
+	host: 'localhost',
+	dialect: 'mysql', 
 	logQueryParameters: true,
 	benchmark: true
 });
 
-const modelDefiners = [
-	require('./models/user.model'),
-	require('./models/instrument.model'),
-	require('./models/orchestra.model'),
-	// Add more models here...
-	// require('./models/item'),
+const models = [
+	require('./rectangle')
+	// could add more here
 ];
 
-// We export the sequelize connection instance to be used around our app.
+for (const modelDefiner of modelDefiners) {
+	modelDefiner(sequelize);
+}
+
 module.exports = sequelize;
